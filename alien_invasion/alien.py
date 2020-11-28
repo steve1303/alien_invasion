@@ -10,7 +10,7 @@ class Alien(Sprite):  # 继承自精灵类
         """初始化外星人并设置其初始位置"""
         super().__init__()
         self.screen = ai_game.screen
-        self.settings = ai_game.settings
+        self.settings = ai_game.settings  # 便于在update（）访问外星人的速度
 
         # 加载外星人图像并设置其rect属性
         self.image = pygame.image.load('./images/alien.bmp')
@@ -31,10 +31,5 @@ class Alien(Sprite):  # 继承自精灵类
 
     def update(self):
         """向左或者向右移动外星人"""
-        self.x += (self.settings.alien_speed * self.settings.fleet_direction)
+        self.x += (self.settings.alien_speed * self.settings.fleet_direction)  # 移动量
         self.rect.x = self.x
-
-
-
-
-
