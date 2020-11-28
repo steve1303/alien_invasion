@@ -1,4 +1,9 @@
-# coding=utf-8
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# @Author  : fiuxiu
+# @Time    : 2020年11月28日 22:51
+# @Software: PyCharm
+
 import sys
 from time import sleep
 
