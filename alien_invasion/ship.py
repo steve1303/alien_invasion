@@ -11,10 +11,18 @@ class Ship(Sprite):  # 继承自精灵类
         super().__init__()
         self.screen = ai_game.screen
         self.settings = ai_game.settings
-        self.screen_rect = ai_game.screen.get_rect()
-
+        self.screen_rect = ai_game.screen.get_rect()  # get_rect() 方法访问屏幕surface对象的属性rect
+        """
+        rect矩形对象的属性
+        居中: center centerx centery
+        centerx = x + 0.5 * width
+        centery = y + 0.5 * height
+        bottom = y + height
+        游戏元素与边缘对其:top bottom left right
+        组合属性: midbottom midtop midleft midright
+        """
         # 加载飞船图像并获取其外接矩形
-        self.image = pygame.image.load('./images/ship.bmp')
+        self.image = pygame.image.load('./images/ship.bmp')  # 加载图像
         self.rect = self.image.get_rect()
 
         # 对于每艘飞船，都将其放在屏幕底部的中央
@@ -25,7 +33,7 @@ class Ship(Sprite):  # 继承自精灵类
 
         # 移动标志
         self.moving_right = False
-        self.moving_left = False
+        self.moving_left = False  # 下面的update方法中检测这个标志属性
 
     def update(self):
         """根据移动标志调整飞船的位置"""
